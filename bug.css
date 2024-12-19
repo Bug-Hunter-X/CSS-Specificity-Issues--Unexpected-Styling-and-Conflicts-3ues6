@@ -1,0 +1,32 @@
+The following CSS rule uses a selector that's too specific or too general, causing unexpected behavior:
+
+```css
+div p { color: blue; }
+```
+
+This rule will apply to all `<p>` elements that are descendants of a `<div>` element. This might be too specific if you only want to target certain `<p>` elements.
+
+**Problem:** Over specificity or lack of specificity can lead to unintended style application or style conflicts.
+
+**Example:** If you have a nested structure like:
+
+```html
+<div>
+  <p>This is a paragraph.</p>
+  <div>
+    <p>This is another paragraph.</p>
+  </div>
+</div>
+```
+
+Both paragraphs will be styled with `color: blue;` due to the rule's generality.
+
+**Solution:** Use more precise selectors that specify the context of the elements you're targeting.
+
+```css
+#my-div p { color: blue; } /* More specific, only applies to paragraphs within div with id="my-div" */
+
+p.special { color: blue; } /* More specific, only applies to paragraphs with class="special" */
+
+div > p { color: blue; } /* More specific, applies only to paragraphs that are direct children of a div */
+```
