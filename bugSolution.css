@@ -1,0 +1,17 @@
+The following corrected CSS rules use more specific selectors to avoid unexpected style application:
+
+```css
+/* Using ID for more precise targeting */
+#myDiv p { color: blue; }
+
+/* Using class for more precise targeting */
+p.special { color: blue; }
+
+/* Using direct child selector for better specificity */
+div > p { color: blue; }
+
+/* Being more explicit about the parent and child */
+.container p.special { color: blue; }
+```
+
+These revisions demonstrate how to pinpoint the elements you want to style more precisely, removing the unintentional styling from other parts of your webpage.
